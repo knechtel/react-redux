@@ -4,7 +4,6 @@ import { updateObject } from './utility.js';
 const initialState = {
     counter: 0,
     results: [],
-    test: ['test','hey'],
     vetor:[],
     vlr: false
 }
@@ -12,7 +11,10 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     
     if(action.type ===  actionTypes.SET_PAYLOAD) {
-     return updateObject( state, { results: state.results.concat( { id: new Date(), value: action.login[1] } ) } );
+        return updateObject( state, { 
+            results: state.results.concat( 
+            { id: new Date(), value: action.login[1] } )
+        });
     }
     return state;
 };
