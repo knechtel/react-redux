@@ -69,9 +69,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 
     return {
-        onIncrementCounter: () => dispatch({ type: 'INCREMENT' }),
-        onDecrementCounter: () => dispatch({ type: 'dec' }),
-        onValueCounter: () => dispatch({ type: 'decVal', val: 10 }),
         onStoreResult: (login) => dispatch({ type: actionType.SET_PAYLOAD, login })
     };
 };

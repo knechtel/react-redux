@@ -11,6 +11,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     
     if(action.type ===  actionTypes.SET_PAYLOAD) {
+
         return updateObject( state, { 
             results: state.results.concat( 
             { id: new Date(), value: action.login[1] } )
