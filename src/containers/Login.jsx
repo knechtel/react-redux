@@ -11,7 +11,8 @@ class Login extends Component {
         this.state = {
             vetor: ["maiquel", "knechtel"],
             login: 'test',
-            storedResults:[]
+            storedResults: [],
+            valor: false
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -39,14 +40,13 @@ class Login extends Component {
                             <td>Senha:</td>
                             <td><input type="password" /></td>
                         </tr>
-
                         <button onClick={() => this.props.onStoreResult(this.state.vetor)}>Submit</button>
                     </table>
                 </center>
-                <Footer /> 
+                <Footer />
                 <div>
                     <ul>
-                    {this.props.storedResults.map(item => {
+                        {this.props.storedResults.map(item => {
                             return <li>{item.value}</li>;
                         })}
                     </ul>
@@ -61,8 +61,8 @@ const mapStateToProps = state => {
     return {
 
         ctr: state.vetor,
-        storedResults: state.results
-
+        storedResults: state.results,
+        valor: state.vlr
     };
 };
 
@@ -72,8 +72,7 @@ const mapDispatchToProps = dispatch => {
         onIncrementCounter: () => dispatch({ type: 'INCREMENT' }),
         onDecrementCounter: () => dispatch({ type: 'dec' }),
         onValueCounter: () => dispatch({ type: 'decVal', val: 10 }),
-        onStoreResult: (login) => dispatch({ type: actionType.SET_PAYLOAD, login }),
-        onStoreResult1: (login) => dispatch({ type: actionType.SET_PAYLOAD, login })
+        onStoreResult: (login) => dispatch({ type: actionType.SET_PAYLOAD, login })
     };
 };
 

@@ -5,7 +5,8 @@ const initialState = {
     counter: 0,
     results: [],
     test: ['test','hey'],
-    vetor:[]
+    vetor:[],
+    vlr: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -28,7 +29,7 @@ const reducer = (state = initialState, action) => {
         }
     }
     if(action.type ===  actionTypes.SET_PAYLOAD) {
-        console.log(">>>>reducer login "+state.results.concat( { id: new Date(), value: action.login[1] } ));
+        // console.log(">>>>reducer login "+state.results.concat( { id: new Date(), value: action.login[1] } ));
      return updateObject( state, { results: state.results.concat( { id: new Date(), value: action.login[1] } ) } );
     }
     return state;
